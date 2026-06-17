@@ -6,13 +6,19 @@ using namespace std;
     //maxlimit on books alloted
     //record of books taken 
     //tech stack:  vector, Oops, maps, time library
+
+    //phase 2
+    //auto assignment of B_id and M_id
+
+    //also make a sysytem which can log in daily and maintain record of sign in daily
+
 typedef long long ll;
     struct Member{
         int M_id;
         string name;
         long long phone;
 
-        Member() {};
+        Member() {}; //default constructor necessary since you are creating a blank object first
         Member(int a, string b, ll c){
             M_id=a;
             name=b;
@@ -54,38 +60,33 @@ typedef long long ll;
         unordered_map<int,Member> Members;
         unordered_map<int,Book> books;
         vector<issueRecord> record;
+
+        int countBook=1,countMember=1; //auto increment;
+
         public:
         void add_Book(){
-            cout<<"Enter book id: ";
-            int p;cin>>p;
             cout<<"Enter name of book: ";
             string q; cin>>q;
             cout<<"Enter price of book: ";
             double r; cin>>r;
             cout<<"Enter available copies: ";
             int s; cin>>s;
-            Book b(p,q,r,s);
-            books.insert({p,b});
-            cout<<"\nBook added successfully\n";
+            Book b(countBook,q,r,s);
+            books.insert({countBook,b});
+            cout<<"\nBook added successfully\nBook_id= "<<countBook++<<endl;
             return;
         }
-        void add_Book(int p,string q,double r,int s){
-            Book b(p,q,r,s);
-            books.insert({p,b});
-            return;
-        }
+        
         void add_Member(){
-            int a;
             string b; 
             ll c;
-            cout<<"Enter the given id number: ";
-            cin>>a;
             cout<<"Enter name: ";
             cin>>b;
             cout<<"Enter phone number: ";
             cin>>c;
-            Member x(a,b,c);
-            Members.insert({a,x});
+            Member x(countMember,b,c);
+            Members.insert({countMember,x});
+            cout<<"\nMember added successfully\nMember_id= "<<countMember++<<endl;
         }
         void issue_Book(){
             int a;
