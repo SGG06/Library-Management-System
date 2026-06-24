@@ -1,16 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-    //Library Management Sysytem
-    //database of Students, Faculties
-    //Database of books
-    //maxlimit on books alloted
-    //record of books taken 
-    //tech stack:  vector, Oops, maps, time library
-
-    //phase 2
-    //auto assignment of B_id and M_id
-
-    //also make a sysytem which can log in daily and maintain record of sign in daily
 
 typedef long long ll;
     struct Member{
